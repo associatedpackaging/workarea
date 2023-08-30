@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'dragonfly', '~> 1.3.0'
   s.add_dependency 'sidekiq', '~> 6.5.0'
   s.add_dependency 'sidekiq-cron', '~> 1.9.0'
-  s.add_dependency 'sidekiq-unique-jobs', '~> 7.0.0'
+  s.add_dependency 'sidekiq-unique-jobs', '~> 7.1.0'
   s.add_dependency 'sidekiq-throttled', '~> 0.18.0'
   s.add_dependency 'geocoder', '~> 1.6.3'
   s.add_dependency 'redis-rack-cache', '~> 2.2.0'
