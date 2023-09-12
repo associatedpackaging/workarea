@@ -109,7 +109,7 @@ module Workarea
       config.driver_options = {
         client_driver: :chrome,
         selenium_options: {
-          desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
+          capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
             chromeOptions: HeadlessChrome.options,
             loggingPrefs: {
               browser: 'ALL'

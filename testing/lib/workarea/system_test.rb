@@ -19,7 +19,7 @@ Capybara.register_driver :headless_chrome do |app|
   Capybara::Selenium::Driver.new(
     app,
     browser: :chrome,
-    desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
+    capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
       chromeOptions: chrome_options,
       loggingPrefs: {
         browser: 'ALL'
