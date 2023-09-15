@@ -11,7 +11,7 @@ if ENV['CI'].to_s =~ /true/
   Minitest::Retry.use!
 end
 
-allowed_hosts = ['127.0.0.1', 'localhost', 'chromedriver.storage.googleapis.com'] +
+allowed_hosts = ['127.0.0.1', 'localhost', 'chromedriver.storage.googleapis.com', 'googlechromelabs.github.io'] +
                  Workarea.elasticsearch.transport.hosts.map { |h| h[:host] } +
                  [Workarea.redis.connection[:host]] +
                   Mongoid::Config.clients.map { |k, v| v['hosts'] }.flatten
