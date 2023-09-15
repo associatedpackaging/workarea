@@ -77,7 +77,7 @@ module Workarea
     include IntegrationTest::Locales
     include Rails.application.routes.mounted_helpers
 
-    driven_by :headless_chrome
+    driven_by :selenium, using: :headless_chrome
 
     setup do
       reset_window_size
