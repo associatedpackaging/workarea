@@ -82,7 +82,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'json-streamer', '~> 2.1.0'
   s.add_dependency 'spectrum-rails', '~> 1.8.0'
   s.add_dependency 'dragonfly-s3_data_store', '~> 1.3.0'
-  s.add_dependency 'loofah', '~> 2.9.0'
+  s.add_dependency 'loofah', '~> 2.21.0'
   s.add_dependency 'referer-parser', '~> 0.3.0'
   s.add_dependency 'serviceworker-rails', '~> 0.6.0'
   s.add_dependency 'chartkick', '~> 3.4.0'
