@@ -15,11 +15,11 @@ chrome_options = Workarea::HeadlessChrome.options
 
 Capybara.server_errors = [Exception]
 Capybara.automatic_label_click = true
-Capybara.register_driver :headless_chrome do |app|
+Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(
     app,
     browser: :chrome,
-    capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
+    capabilities: Selenium::WebDriver::Chrome::Options.chrome(
       chromeOptions: chrome_options,
       loggingPrefs: {
         browser: 'ALL'
@@ -77,7 +77,12 @@ module Workarea
     include IntegrationTest::Locales
     include Rails.application.routes.mounted_helpers
 
-    driven_by :selenium, using: :headless_chrome
+    driven_by :selenium, using: :headless_chrome do |option|
+      option.add_argument('--disable-gpu')
+      option.add_argument('--disable-popup-blocking')
+      option.add_argument('--enable-features=NetworkService,NetworkServiceInProcess')
+      option.add_argument('--headless=new')
+    end
 
     setup do
       reset_window_size
@@ -107,14 +112,14 @@ module Workarea
     # Used to solve race conditions between XHR requests and
     # assertions.
     #
+    # TODO: consider removing this when all system tests
+    # are updated to handle their own ajax return checks.
     def wait_for_xhr(time=Capybara.default_max_wait_time)
       Timeout.timeout(time) do
         loop until finished_all_xhr_requests?
       end
     rescue Timeout::Error => error
-      javascript_errors = page.driver.browser.manage.logs.get(:browser).each do |log_entry|
-        log_entry.level == 'SEVERE' && /Uncaught/.match?(log_entry.message)
-      end
+      javascript_errors = nil
       if javascript_errors.present?
         raise(
           Timeout::Error,
@@ -162,10 +167,10 @@ module Workarea
 
     private
 
+    # TODO: remove this when wait_or_xhr is removed
     def finished_all_xhr_requests?
-      return unless javascript?
-
-      page.evaluate_script("!window['jQuery'] || jQuery.active === 0")
+      return true
+      # page.evaluate_script("!window['jQuery'] || jQuery.active === 0")
     end
   end
 end

@@ -70,6 +70,9 @@ module Workarea
         product = Catalog::Product.find('INT_PRODUCT')
         visit storefront.product_path(product)
         click_button t('workarea.storefront.products.add_to_cart')
+        within('.cart-popup') do
+          find('.message__text', text: t('workarea.storefront.flash_messages.cart_item_added'))
+        end
       end
 
       def start_guest_checkout
