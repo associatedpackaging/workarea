@@ -77,11 +77,10 @@ module Workarea
     include IntegrationTest::Locales
     include Rails.application.routes.mounted_helpers
 
-    driven_by :selenium, using: :headless_chrome do |option|
+    driven_by :selenium, using: :headless_chrome, screen_size: [1400, 1400]  do |option|
       option.add_argument('--disable-gpu')
       option.add_argument('--disable-popup-blocking')
       option.add_argument('--enable-features=NetworkService,NetworkServiceInProcess')
-      option.add_argument('--headless=new')
     end
 
     setup do
@@ -141,8 +140,6 @@ module Workarea
 
     # Resets the dimensions of the testing browser
     def reset_window_size
-      return unless javascript?
-
       page.driver.browser.manage.window.resize_to(
         Workarea.config.capybara_browser_width,
         Workarea.config.capybara_browser_height
