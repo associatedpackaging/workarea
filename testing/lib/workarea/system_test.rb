@@ -140,6 +140,8 @@ module Workarea
 
     # Resets the dimensions of the testing browser
     def reset_window_size
+      # The :rack_test driver doesn't have this functionality.
+      return if Capybara.current_driver == :rack_test
       page.driver.browser.manage.window.resize_to(
         Workarea.config.capybara_browser_width,
         Workarea.config.capybara_browser_height
@@ -166,6 +168,7 @@ module Workarea
 
     # TODO: remove this when wait_or_xhr is removed
     def finished_all_xhr_requests?
+      sleep 0.5
       return true
       # page.evaluate_script("!window['jQuery'] || jQuery.active === 0")
     end
