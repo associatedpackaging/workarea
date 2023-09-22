@@ -67,7 +67,7 @@ module Workarea
         if ::Sidekiq.const_defined?('Testing') && ::Sidekiq::Testing.inline?
           ::Sidekiq.configure_client do |config|
             config.client_middleware do |chain|
-              chain.remove SidekiqUniqueJobs::Client::Middleware
+              chain.remove SidekiqUniqueJobs::Middleware::Client
             end
           end
         end

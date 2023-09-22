@@ -1,7 +1,7 @@
 module Workarea
   module Admin
     class StatusReportMailer < Admin::ApplicationMailer
-      add_template_helper(InsightsHelper)
+      helper(InsightsHelper)
 
       def self.report_to_many(users)
         alerts = AlertsViewModel.wrap(Alerts.new)
