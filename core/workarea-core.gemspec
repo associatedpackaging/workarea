@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'money-rails', '~> 1.13.0'
   s.add_dependency 'mongoid-audit_log', '>= 0.6.0'
   s.add_dependency 'mongoid-document_path', '~> 0.2.0'
-  s.add_dependency 'mongoid-tree', '~> 2.1.0'
+  s.add_dependency 'mongoid-tree', '~> 2.2.0'
   s.add_dependency 'mongoid-sample', '~> 0.1.0'
   s.add_dependency 'mongoid-encrypted', '~> 1.0.0'
   s.add_dependency 'elasticsearch', '~> 5.0.1'
