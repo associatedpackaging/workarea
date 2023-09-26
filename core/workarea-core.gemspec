@@ -16,9 +16,9 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'bundler', '>= 1.8.0' # 1.8.0 added env variable for secrets
   s.add_dependency 'rails', '~> 6.1.0'
-  s.add_dependency 'mongoid', '~> 8.1.0'
+  s.add_dependency 'mongoid', '~> 7.5.0'
   s.add_dependency 'bcrypt', '~> 3.1.10'
-  s.add_dependency 'money-rails', '~> 1.13.0'
+  s.add_dependency 'money-rails', '~> 1.15.0'
   s.add_dependency 'mongoid-audit_log', '>= 0.6.0'
   s.add_dependency 'mongoid-document_path', '~> 0.2.0'
   s.add_dependency 'mongoid-tree', '~> 2.2.0'
