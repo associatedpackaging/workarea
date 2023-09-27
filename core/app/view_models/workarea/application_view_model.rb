@@ -64,8 +64,8 @@ module Workarea
       (other.class == self.class && other.id == id) || other == model
     end
 
-    def translate(key, options = {})
-      I18n.translate(key, options)
+    def translate(key, **options)
+      ::I18n.translate(key, **options)
     end
     alias :t :translate
   end
