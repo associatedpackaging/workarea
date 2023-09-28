@@ -28,11 +28,11 @@ Which returns:
 
 ## Using Rails Helpers in JST Templates
 
-It's possible to access Rails Helpers in your templates as well. A good example of this is the `inline_svg` helper, which processes an SVG and outputs its contents into the page, rather than rendering it as an image.
+It's possible to access Rails Helpers in your templates as well. A good example of this is the `inline_svg_tag` helper, which processes an SVG and outputs its contents into the page, rather than rendering it as an image.
 
 To access rails helpers in your template, add a `.ruby` extension to the end of your `.jst.ejs` chain.
 
-The Workarea platform uses the `inline_svg` Rails helper for the Admin's WYSIWYG editor's toolbar icons, loaded in `wysiwyg_toolbar.jst.ejs.ruby`:
+The Workarea platform uses the `inline_svg_tag` Rails helper for the Admin's WYSIWYG editor's toolbar icons, loaded in `wysiwyg_toolbar.jst.ejs.ruby`:
 
 ```
 %Q{

@@ -914,7 +914,7 @@ Refer to the following examples, and create corresponding partials for your tend
 .data-card
   .data-card__cell
     %p.data-card__line.data-card__credit-card
-      = inline_svg('workarea/storefront/payment_icons/gift_card.svg', title: t('workarea.storefront.orders.tenders.gift_card.title'), class: 'payment-icon')
+      = inline_svg_tag('workarea/storefront/payment_icons/gift_card.svg', title: t('workarea.storefront.orders.tenders.gift_card.title'), class: 'payment-icon')
       %span.data-card__credit-card-number
         = t('workarea.storefront.credit_cards.summary', issuer: t('workarea.storefront.orders.tenders.gift_card.title'), number: tender.display_number)
     %p.data-card__line
@@ -974,7 +974,7 @@ Refer to the following example, and create a similar partial for your specific t
 
 ```haml
 %li
-  = inline_svg('workarea/admin/payment_icons/gift_card.svg', title: t('workarea.admin.orders.tenders.gift_card.title'), class: 'payment-icon')
+  = inline_svg_tag('workarea/admin/payment_icons/gift_card.svg', title: t('workarea.admin.orders.tenders.gift_card.title'), class: 'payment-icon')
   = t('workarea.admin.orders.tenders.gift_card.title')
   = tender.display_number
   = number_to_currency tender.amount

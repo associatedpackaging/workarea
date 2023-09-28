@@ -132,7 +132,7 @@ To display the new report on the report's dashboard, a partial view needs to be 
   .card{ class: card_classes(:custom_report, local_assigns[:active]) }
     = link_to custom_report_path, class: 'card__header' do
       %span.card__header-text= t('workarea.admin.reports.custom.title')
-      = inline_svg 'workarea/admin/icons/insights.svg', class: 'card__icon'
+      = inline_svg_tag 'workarea/admin/icons/insights.svg', class: 'card__icon'
 
     .card__body
       .card__centered-content
