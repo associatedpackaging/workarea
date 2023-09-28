@@ -5,8 +5,8 @@ Dragonfly.app(:workarea).configure do
     # Allow using the convert processor (part of the ImageMagick plugin).
     # We need this for .ico files, Vips supposedly supports .ico when installed
     # with ImageMagick support, but not seeing this in practice.
-    require 'dragonfly/image_magick/processors/convert'
-    Dragonfly.app(:workarea).add_processor :convert, Dragonfly::ImageMagick::Processors::Convert.new
+    # require 'dragonfly/image_magick/processors/convert'
+    # Dragonfly.app(:workarea).add_processor :convert, Dragonfly::ImageMagick::Processors::Convert.new
   else
     plugin :imagemagick
   end
