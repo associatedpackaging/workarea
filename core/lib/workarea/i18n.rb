@@ -51,13 +51,13 @@ module Workarea
 
       # Delegate all other methods to the global I18n.
       #
-      def method_missing(method, *args, &block)
+      def method_missing(method, *args, **kwargs, &block)
         if ::I18n.respond_to?(method)
-          self.class.send(:define_method, method) do |*arguments, &blok|
-            ::I18n.send(method, *arguments, &blok)
+          self.class.send(:define_method, method) do |*arguments, **kwarguments, &blok|
+            ::I18n.send(method, *arguments, **kwarguments, &blok)
           end
 
-          send(method, *args, &block)
+          send(method, *args, **kwargs, &block)
         else
           super
         end
