@@ -9,6 +9,10 @@ module Workarea
         Admin.definition.fields.each_with_object({}) do |field, memo|
           next unless @params.key?(field.key)
           value = @params[field.key]
+          
+          if field.type == :array && value.blank?
+            value = []
+          end
 
           formatted_value =
             if value.present? && respond_to?(field.type)
