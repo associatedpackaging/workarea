@@ -32,7 +32,7 @@ module Workarea
         #
         # @param [Hash]
         #
-        def reset!(by: nil, params)
+        def reset!(by: nil, **params)
           @params = params
           @query = Search::ProductSearch.new(params.merge(rules: product_rules))
           @trace << Trace.new(@params, @query, by)
