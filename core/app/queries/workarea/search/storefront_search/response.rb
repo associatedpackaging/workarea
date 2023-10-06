@@ -20,7 +20,7 @@ module Workarea
           @customization = options[:customization]
           @trace = []
 
-          reset!(@params)
+          reset!(**@params)
         end
 
         def redirect?
@@ -32,7 +32,7 @@ module Workarea
         #
         # @param [Hash]
         #
-        def reset!(params, by: nil)
+        def reset!(by: nil, params)
           @params = params
           @query = Search::ProductSearch.new(params.merge(rules: product_rules))
           @trace << Trace.new(@params, @query, by)

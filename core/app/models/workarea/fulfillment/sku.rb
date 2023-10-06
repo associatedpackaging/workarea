@@ -33,7 +33,7 @@ module Workarea
       end
 
       def process!(**args)
-        policy_object.process(args)
+        policy_object.process(**args)
       end
 
       def downloadable?

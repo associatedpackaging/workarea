@@ -29,7 +29,7 @@ module Workarea
     end
 
     module Locales
-      def set_locales(*)
+      def set_locales(...)
         super
 
         Workarea::Elasticsearch::Document.all.each(&:create_indexes!)

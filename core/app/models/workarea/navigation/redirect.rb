@@ -36,7 +36,7 @@ module Workarea
         encoded_path = if path =~ URI::ESCAPED
                          path
                        else
-                         URI.encode(path)
+                         URI::Parser.new.escape(path)
                        end
         uri = URI.parse(encoded_path)
 
