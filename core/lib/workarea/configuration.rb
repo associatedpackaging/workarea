@@ -18,7 +18,7 @@ module Workarea
         symbol: 'Symbol',
         integer: 'Integer',
         float: 'Float',
-        boolean: 'ActiveModel::Type::Boolean',
+        boolean: 'Mongoid::Boolean',
         array: 'Array',
         hash: 'HashWithIndifferentAccess',
         duration: 'ActiveSupport::Duration'

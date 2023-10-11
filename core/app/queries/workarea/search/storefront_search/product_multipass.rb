@@ -25,7 +25,7 @@ module Workarea
             pass_params = params.merge(pass: next_pass)
             new_pass = self.class.new(pass_params, customization)
 
-            response.reset!(pass_params, by: self)
+            response.reset!(by: self, **pass_params)
             new_pass.call(response, &traverse_chain)
           end
         end
