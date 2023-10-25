@@ -95,8 +95,8 @@ module Workarea
         end
 
         # @private
-        def method_missing(sym, *args, &block)
-          @order.send(sym, *args, &block) if @order.respond_to?(sym)
+        def method_missing(sym, *args, **kwargs, &block)
+          @order.send(sym, *args, **kwargs, &block) if @order.respond_to?(sym)
         end
       end
     end

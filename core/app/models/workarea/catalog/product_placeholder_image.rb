@@ -54,8 +54,8 @@ module Workarea
         super || image.respond_to?(method_name)
       end
 
-      def method_missing(sym, *args, &block)
-        image.send(sym, *args, &block) if image.respond_to?(sym)
+      def method_missing(sym, *args, **kwargs, &block)
+        image.send(sym, *args, **kwargs, &block) if image.respond_to?(sym)
       end
     end
   end

@@ -40,7 +40,7 @@ module Workarea
         download? && file.present?
       end
 
-      def method_missing(sym, *args, &block)
+      def method_missing(sym, *args, **kwargs, &block)
         method = sym.to_s.chomp('?')
         return super unless self.class.policies.include?(method)
 

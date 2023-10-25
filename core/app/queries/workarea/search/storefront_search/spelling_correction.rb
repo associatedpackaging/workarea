@@ -6,7 +6,7 @@ module Workarea
 
         def call(response)
           if correction = find_spell_correction(response)
-            response.reset!(params.merge(q: correction), by: self)
+            response.reset!(by: self, **params.merge(q: correction))
             response.message = I18n.t(
               'workarea.storefront.searches.showing_suggested_results',
               suggestion: correction,
