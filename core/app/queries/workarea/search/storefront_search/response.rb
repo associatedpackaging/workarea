@@ -39,7 +39,7 @@ module Workarea
         end
 
         def query_string
-          params[:q].strip
+          params[:q]&.strip.presence || params['q']&.strip.presence
         end
 
         def has_filters?
