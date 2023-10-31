@@ -32,7 +32,7 @@ module Workarea
     dragonfly_accessor :file, app: :workarea do
       after_assign do |attachment|
         if FastImage.type(attachment.file) == :jpeg
-          file.encode!('jpg', **Workarea.config.jpg_encode_options)
+          file.encode!('jpg', Workarea.config.jpg_encode_options)
         end
       end
     end
