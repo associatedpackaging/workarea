@@ -31,7 +31,7 @@ module Workarea
       config.jpg_encode_options = if Workarea::Configuration::ImageProcessing.libvips?
         { output_options: { strip: true, interlace: true, Q: 85 } }
       else
-        '+profile "8bim,exif,iptc,xmp" -set comment "" -interlace Plane -quality 85'
+        '+profile "8bim,exif,iptc,xmp" -quality 85'
       end
 
       # Stores instances of payment gateways for Workarea::Payment to use
