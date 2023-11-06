@@ -14,9 +14,9 @@ module Workarea
         super || file.respond_to?(method_name)
       end
 
-      def method_missing(sym, *args, &block)
+      def method_missing(sym, *args, **kwargs, &block)
         if file.respond_to?(sym)
-          file.send(sym, *args, &block)
+          file.send(sym, *args, **kwargs, &block)
         else
           super
         end

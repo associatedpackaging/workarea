@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'workarea-core', Workarea::VERSION::STRING
   s.add_dependency 'capybara', '~> 3.18'
-  s.add_dependency 'webmock', '~> 3.5.0'
+  s.add_dependency 'webmock', '~> 3.19.0'
   s.add_dependency 'vcr', '~> 2.9.0'
   s.add_dependency 'launchy', '~> 2.4.3'
   s.add_dependency 'teaspoon', '~> 1.2.0'

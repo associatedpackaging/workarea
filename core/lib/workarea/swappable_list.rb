@@ -41,9 +41,9 @@ module Workarea
       )
     end
 
-    def method_missing(method, *args, &block)
+    def method_missing(method, *args, **kwargs, &block)
       if @source.respond_to?(method)
-        @source.send(method, *args, &block)
+        @source.send(method, *args, **kwargs, &block)
       else
         super
       end

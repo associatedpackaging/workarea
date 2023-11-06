@@ -19,14 +19,14 @@ module Workarea
                  end
     end
 
-    def method_missing(method, *args, &block)
+    def method_missing(method, *args, **kwargs, &block)
       if model && model.respond_to?(method)
         # Define a method so the next call is faster
-        self.class.send(:define_method, method) do |*args, &blok|
-          model.send(method, *args, &blok)
+        self.class.send(:define_method, method) do |*args, **kwargs, &blok|
+          model.send(method, *args, **kwargs, &blok)
         end
 
-        send(method, *args, &block)
+        send(method, *args, **kwargs, &block)
       else
         super
       end
@@ -64,8 +64,8 @@ module Workarea
       (other.class == self.class && other.id == id) || other == model
     end
 
-    def translate(key, options = {})
-      I18n.translate(key, options)
+    def translate(key, **options)
+      ::I18n.translate(key, **options)
     end
     alias :t :translate
   end

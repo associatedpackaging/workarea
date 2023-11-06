@@ -10,6 +10,10 @@ module Workarea
           next unless @params.key?(field.key)
           value = @params[field.key]
 
+          if field.type == :array && value.blank?
+            value = []
+          end
+
           formatted_value =
             if value.present? && respond_to?(field.type)
               send(field.type, field, value)

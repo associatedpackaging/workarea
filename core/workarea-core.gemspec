@@ -12,23 +12,23 @@ Gem::Specification.new do |s|
   s.description = "Provides application code, seed data, plugin infrastructure, and other core parts of the Workarea Commerce Platform."
 
   s.files = `git ls-files -- . ':!:data/product_images/*.jpg'`.split("\n")
-  s.required_ruby_version = ['>= 2.5.0', '< 3.0.0']
+  s.required_ruby_version = '>= 2.7.0'
 
   s.add_dependency 'bundler', '>= 1.8.0' # 1.8.0 added env variable for secrets
   s.add_dependency 'rails', '~> 6.1.0'
-  s.add_dependency 'mongoid', '~> 7.2.0'
+  s.add_dependency 'mongoid', '~> 7.5.0'
   s.add_dependency 'bcrypt', '~> 3.1.10'
-  s.add_dependency 'money-rails', '~> 1.13.0'
+  s.add_dependency 'money-rails', '~> 1.15.0'
   s.add_dependency 'mongoid-audit_log', '>= 0.6.0'
   s.add_dependency 'mongoid-document_path', '~> 0.2.0'
-  s.add_dependency 'mongoid-tree', '~> 2.1.0'
+  s.add_dependency 'mongoid-tree', '~> 2.2.0'
   s.add_dependency 'mongoid-sample', '~> 0.1.0'
   s.add_dependency 'mongoid-encrypted', '~> 1.0.0'
   s.add_dependency 'elasticsearch', '~> 5.0.1'
   s.add_dependency 'kaminari', '~> 1.2.1'
   s.add_dependency 'kaminari-mongoid', '~> 1.0.0'
   s.add_dependency 'activemerchant', '~> 1.52'
-  s.add_dependency 'dragonfly', '~> 1.3.0'
+  s.add_dependency 'dragonfly', '~> 1.4.0'
   s.add_dependency 'sidekiq', '~> 6.5.0'
   s.add_dependency 'sidekiq-cron', '~> 1.9.0'
   s.add_dependency 'sidekiq-unique-jobs', '~> 7.1.0'
@@ -61,7 +61,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'tooltipster-rails', '~> 4.2.0'
   s.add_dependency 'select2-rails', '~> 4.0.3'
   s.add_dependency 'wysihtml-rails', '~> 0.6.0.beta2'
-  s.add_dependency 'rack-attack', '~> 6.3.1'
+  s.add_dependency 'rack-attack', '~> 6.4.0'
   s.add_dependency 'redcarpet', '~> 3.5.1', '>= 3.5.1'
   s.add_dependency 'jquery-livetype-rails', '~> 0.1.0' # TODO remove v4
   s.add_dependency 'jquery-unique-clone-rails', '~> 1.0.0'
@@ -89,7 +89,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'browser', '~> 5.3.0'
   s.add_dependency 'puma', '>= 4.3.1'
   s.add_dependency 'rack' , '>= 2.1.4'
-  s.add_dependency 'dragonfly_libvips', '~> 2.4.2'
+  s.add_dependency 'dragonfly_libvips', '~> 2.5.1'
   s.add_dependency 'sitemap_generator', '~> 6.1.2'
   s.add_dependency 'recaptcha', '~> 5.6.0'
 
