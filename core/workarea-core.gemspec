@@ -76,7 +76,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'minitest', '~> 5.14.0'
   s.add_dependency 'countries', '~> 3.0.0'
   s.add_dependency 'waypoints_rails', '~> 4.0.1'
-  s.add_dependency 'rails-decorators', '0.1.4'
+  s.add_dependency 'rails-decorators', '>= 0.1.4'
   s.add_dependency 'icalendar', '~> 2.7.0'
   s.add_dependency 'premailer-rails', '~> 1.11.0'
   s.add_dependency 'json-streamer', '~> 2.1.0'
