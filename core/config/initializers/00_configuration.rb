@@ -212,7 +212,7 @@ Workarea::Configuration.define_fields do
     ).squish.html_safe
 
     field :site_key, name: 'v3 Site Key', type: :string, required: false
-    field :secret_key, name: 'v3 Secret Key', type: :string, required: false, encrypted: true
+    field :secret_key, name: 'v3 Secret Key', type: :string, required: false
     field :minimum_score,
       name: 'Minimum Score',
       type: :float,
@@ -235,7 +235,7 @@ Workarea::Configuration.define_fields do
     ).squish.html_safe
 
     field :site_key, name: 'v2 Site Key', type: :string, required: false
-    field :secret_key, name: 'v2 Secret Key', type: :string, required: false, encrypted: true
+    field :secret_key, name: 'v2 Secret Key', type: :string, required: false
   end
 
   fieldset :security, namespaced: false do
