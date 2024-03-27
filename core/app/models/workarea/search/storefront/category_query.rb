@@ -1,6 +1,3 @@
-# For some reason, loading Search::Storefront::Product doesn't get triggered
-require_dependency 'workarea/search/storefront/product'
-
 module Workarea
   module Search
     class Storefront
