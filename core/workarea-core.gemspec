@@ -12,10 +12,10 @@ Gem::Specification.new do |s|
   s.description = "Provides application code, seed data, plugin infrastructure, and other core parts of the Workarea Commerce Platform."
 
   s.files = `git ls-files -- . ':!:data/product_images/*.jpg'`.split("\n")
-  s.required_ruby_version = '>= 2.7.0'
+  s.required_ruby_version = '>= 3.1.0'
 
   s.add_dependency 'bundler', '>= 1.8.0' # 1.8.0 added env variable for secrets
-  s.add_dependency 'rails', '~> 6.1.0'
+  s.add_dependency 'rails', '~> 7.0.0'
   s.add_dependency 'mongoid', '~> 7.5.0'
   s.add_dependency 'bcrypt', '~> 3.1.10'
   s.add_dependency 'money-rails', '~> 1.15.0'
