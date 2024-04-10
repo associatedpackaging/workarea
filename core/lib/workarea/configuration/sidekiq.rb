@@ -9,6 +9,7 @@ module Workarea
         require "#{Workarea::Core::Engine.root}/app/middleware/workarea/audit_log_client_middleware"
         require "#{Workarea::Core::Engine.root}/app/middleware/workarea/audit_log_server_middleware"
         require "#{Workarea::Core::Engine.root}/app/middleware/workarea/release_server_middleware"
+        require "#{Workarea::Core::Engine.root}/app/workers/sidekiq/callbacks"
 
         unless manually_configured?
           ::Sidekiq.options.merge!(

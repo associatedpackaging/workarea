@@ -28,8 +28,8 @@ module Workarea
         if user.update_attributes(password: new_password)
           destroy
         else
-          user.errors.each do |attribute, error|
-            errors.add(attribute, error)
+          user.errors.each do |error|
+            errors.add(error.attribute, error.message)
           end
           false
         end
