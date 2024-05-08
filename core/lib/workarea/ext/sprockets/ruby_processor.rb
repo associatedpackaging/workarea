@@ -15,5 +15,7 @@ module Sprockets
     end
   end
 
-  register_engine '.ruby', RubyProcessor, mime_type: 'text/plain', silence_deprecation: true
+  # register_engine '.ruby', RubyProcessor, mime_type: 'text/plain', silence_deprecation: true
+  register_mime_type 'text/plain', extensions: ['.ruby']
+  register_preprocessor 'text/plain', RubyProcessor
 end
