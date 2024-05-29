@@ -1,5 +1,4 @@
 require 'capybara/rails'
-require 'webdrivers'
 require 'puma'
 require 'capybara/chromedriver/logger'
 require 'workarea/integration_test'
