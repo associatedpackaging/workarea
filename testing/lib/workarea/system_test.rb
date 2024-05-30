@@ -80,6 +80,7 @@ module Workarea
       option.add_argument('--disable-gpu')
       option.add_argument('--disable-popup-blocking')
       option.add_argument('--enable-features=NetworkService,NetworkServiceInProcess')
+      option.add_argument('--disable-dev-shm-usage')
     end
 
     setup do
