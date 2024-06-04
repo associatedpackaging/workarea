@@ -82,6 +82,7 @@ module Workarea
       option.add_argument('--enable-features=NetworkService,NetworkServiceInProcess')
       option.add_argument('--disable-dev-shm-usage')
       option.add_argument('--window-size=1400,1400')
+      option.add_argument('--no-sandbox')
     end
 
     setup do
