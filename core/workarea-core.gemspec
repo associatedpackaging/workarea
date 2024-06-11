@@ -47,7 +47,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sprockets-rails', '~> 3.2.0'
   s.add_dependency 'sprockets', '~> 3.7.2'
   s.add_dependency 'predictor', '~> 2.3.0'
-  s.add_dependency 'js-routes', '2.0.0'
+  s.add_dependency 'js-routes', '2.2.8'
   s.add_dependency 'mongoid-active_merchant', '~> 0.2.0'
   s.add_dependency 'normalize-rails', '~> 8.0.1'
   s.add_dependency 'featurejs_rails', '~> 1.0.1'
