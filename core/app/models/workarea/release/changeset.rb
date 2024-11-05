@@ -1,6 +1,3 @@
-# This fixes Release::Changes == Mongoid::AuditLog::Changes in development
-require_dependency 'workarea/release/changes'
-
 module Workarea
   class Release
     class Changeset

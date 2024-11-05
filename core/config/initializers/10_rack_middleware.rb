@@ -1,3 +1,6 @@
+require "#{Workarea::Core::Engine.root}/app/middleware/workarea/enforce_host_middleware"
+require "#{Workarea::Core::Engine.root}/app/middleware/workarea/application_middleware"
+
 app = Rails.application
 app.config.middleware.use(Mongoid::QueryCache::Middleware)
 app.config.middleware.use(Workarea::Elasticsearch::QueryCache::Middleware)
@@ -23,4 +26,7 @@ Rails.application.config.middleware.insert_after(
 
 app.config.middleware.use Workarea::EnforceHostMiddleware
 app.config.middleware.insert(0, Workarea::ApplicationMiddleware)
-app.config.middleware.insert(0, Workarea::StripHttpCachingMiddleware) if Rails.env.test?
+if Rails.env.test?
+  require 'workarea/strip_http_caching_middleware'
+  app.config.middleware.insert(0, Workarea::StripHttpCachingMiddleware) 
+end

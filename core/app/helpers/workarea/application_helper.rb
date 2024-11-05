@@ -3,7 +3,8 @@ module Workarea
     def product_image_url(image, job)
       host = Rails.application.config.action_controller.asset_host
       source = image_url(product_image_path(image, job))
-      return source if host.blank? || source =~ /^(http|\/\/)/
+      return source if host.blank?
+      return source if source.starts_with?('//', 'http')
 
       # These shenanigans are here to work around a Rails problem where the
       # configured asset host isn't being used if it's a proc. We use a proc in

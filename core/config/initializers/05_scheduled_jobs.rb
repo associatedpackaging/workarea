@@ -31,7 +31,7 @@ unless Workarea.skip_services?
     Sidekiq::Cron::Job.create(
       name: 'Workarea::KeepProductIndexFresh',
       klass: 'Workarea::KeepProductIndexFresh',
-      cron: "5,20,35,50 * * * * #{Time.zone.tzinfo.identifier}",
+      cron: "35 * * * * #{Time.zone.tzinfo.identifier}",
       queue: 'low'
     )
 
