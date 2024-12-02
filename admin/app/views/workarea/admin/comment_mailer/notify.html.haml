@@ -17,7 +17,7 @@
           = link_to @comment.author_name, edit_user_url(@comment.author)
           |
         = t('workarea.admin.comment_mailer.notify.posted_at')
-        = @comment.created_at.to_s(:long)
+        = @comment.created_at.to_fs(:long)
 
     .align-center.section
       = link_to t('workarea.admin.comment_mailer.notify.reply_to_this_comment'), commentable_comments_url(@commentable.to_global_id), class: 'button'
@@ -34,7 +34,7 @@
               = link_to comment.author_name, edit_user_url(comment.author)
               |
             = t('workarea.admin.comment_mailer.notify.posted_at')
-            = comment.created_at.to_s(:long)
+            = comment.created_at.to_fs(:long)
 
     - if @comments.length > 5
       .align-center.section

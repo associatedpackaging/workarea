@@ -24,7 +24,7 @@
         .insight
           .insight__body
             %h6.heading.heading--no-margin= t('workarea.admin.dashboards.orders.orders')
-            = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+            = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
               = number_with_delimiter @dashboard.orders
 
             - if @dashboard.orders_percent_change.present?
@@ -38,7 +38,7 @@
         .insight
           .insight__body
             %h6.heading.heading--no-margin= t('workarea.admin.dashboards.orders.revenue')
-            = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+            = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
               = number_to_currency @dashboard.revenue
 
             - if @dashboard.revenue_percent_change.present?
@@ -52,7 +52,7 @@
         .insight
           .insight__body
             %h6.heading.heading--no-margin= t('workarea.admin.dashboards.orders.aov')
-            = link_to average_order_value_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+            = link_to average_order_value_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
               = number_to_currency @dashboard.aov
 
             - if @dashboard.aov_percent_change.present?
@@ -66,7 +66,7 @@
         .insight
           .insight__body
             %h6.heading.heading--no-margin= t('workarea.admin.dashboards.orders.units_sold')
-            = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+            = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
               = number_with_delimiter @dashboard.units_sold
 
             - if @dashboard.units_sold_percent_change.present?

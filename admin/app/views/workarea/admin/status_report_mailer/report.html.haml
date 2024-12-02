@@ -1,30 +1,30 @@
 %tr
   %td
     %h1= t('workarea.admin.status_report_mailer.title', site: Workarea.config.site_name)
-    %p= t('workarea.admin.status_report_mailer.description', date: @date.to_s(:long))
+    %p= t('workarea.admin.status_report_mailer.description', date: @date.to_fs(:long))
 
     .box
       %h2= t('workarea.admin.status_report_mailer.orders.title')
 
       %ul
         %li
-          = link_to sales_over_time_report_url(starts_at: 1.day.ago.to_s(:date_only), ends_at: 1.day.ago.to_s(:date_only), group_by: 'day'), class: 'heading heading--3 heading--no-margin' do
+          = link_to sales_over_time_report_url(starts_at: 1.day.ago.to_fs(:date_only), ends_at: 1.day.ago.to_fs(:date_only), group_by: 'day'), class: 'heading heading--3 heading--no-margin' do
             = number_with_delimiter @dashboard.yesterday.orders
             = t('workarea.admin.status_report_mailer.orders.total_orders')
         %li
-          = link_to sales_over_time_report_url(starts_at: 1.day.ago.to_s(:date_only), ends_at: 1.day.ago.to_s(:date_only), group_by: 'day'), class: 'heading heading--3 heading--no-margin' do
+          = link_to sales_over_time_report_url(starts_at: 1.day.ago.to_fs(:date_only), ends_at: 1.day.ago.to_fs(:date_only), group_by: 'day'), class: 'heading heading--3 heading--no-margin' do
             = number_with_delimiter @dashboard.yesterday.units_sold
             = t('workarea.admin.status_report_mailer.orders.units_sold')
         %li
-          = link_to sales_over_time_report_url(starts_at: 1.day.ago.to_s(:date_only), ends_at: 1.day.ago.to_s(:date_only), group_by: 'day'), class: 'heading heading--3 heading--no-margin' do
+          = link_to sales_over_time_report_url(starts_at: 1.day.ago.to_fs(:date_only), ends_at: 1.day.ago.to_fs(:date_only), group_by: 'day'), class: 'heading heading--3 heading--no-margin' do
             = number_to_currency @dashboard.yesterday.revenue
             = t('workarea.admin.status_report_mailer.orders.revenue')
         %li
-          = link_to sales_over_time_report_url(starts_at: 1.day.ago.to_s(:date_only), ends_at: 1.day.ago.to_s(:date_only), group_by: 'day'), class: 'heading heading--3 heading--no-margin' do
+          = link_to sales_over_time_report_url(starts_at: 1.day.ago.to_fs(:date_only), ends_at: 1.day.ago.to_fs(:date_only), group_by: 'day'), class: 'heading heading--3 heading--no-margin' do
             = number_to_currency @dashboard.yesterday.discounts
             = t('workarea.admin.status_report_mailer.orders.discounts')
         %li
-          = link_to sales_over_time_report_url(starts_at: 1.day.ago.to_s(:date_only), ends_at: 1.day.ago.to_s(:date_only), group_by: 'day'), class: 'heading heading--3 heading--no-margin' do
+          = link_to sales_over_time_report_url(starts_at: 1.day.ago.to_fs(:date_only), ends_at: 1.day.ago.to_fs(:date_only), group_by: 'day'), class: 'heading heading--3 heading--no-margin' do
             = number_with_delimiter @dashboard.yesterday.customers
             = t('workarea.admin.status_report_mailer.orders.customers')
 

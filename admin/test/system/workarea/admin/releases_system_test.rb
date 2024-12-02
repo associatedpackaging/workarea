@@ -60,7 +60,7 @@ module Workarea
 
         within '.browsing-controls__filter--date' do
           find('.browsing-controls__filter-button').click
-          fill_in 'published_at_greater_than', with: 2.weeks.ago.to_s(:date_only)
+          fill_in 'published_at_greater_than', with: 2.weeks.ago.to_fs(:date_only)
           click_button 'filter_by_creation_date'
         end
 

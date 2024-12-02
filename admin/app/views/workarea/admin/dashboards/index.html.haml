@@ -32,19 +32,19 @@
               .insight__body
                 %p
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.revenue')
-                  = link_to sales_over_time_report_path(starts_at: 1.day.ago.to_s(:date_only), ends_at: 1.day.ago.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: 1.day.ago.to_fs(:date_only), ends_at: 1.day.ago.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_to_currency @dashboard.yesterday.revenue
                 %p
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.orders')
-                  = link_to sales_over_time_report_path(starts_at: 1.day.ago.to_s(:date_only), ends_at: 1.day.ago.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: 1.day.ago.to_fs(:date_only), ends_at: 1.day.ago.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_with_delimiter @dashboard.yesterday.orders
                 %p
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.units_sold')
-                  = link_to sales_over_time_report_path(starts_at: 1.day.ago.to_s(:date_only), ends_at: 1.day.ago.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: 1.day.ago.to_fs(:date_only), ends_at: 1.day.ago.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_with_delimiter @dashboard.yesterday.units_sold
                 %p
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.customers')
-                  = link_to sales_over_time_report_path(starts_at: 1.day.ago.to_s(:date_only), ends_at: 1.day.ago.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: 1.day.ago.to_fs(:date_only), ends_at: 1.day.ago.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_with_delimiter @dashboard.yesterday.customers
 
           .grid__cell.grid__cell--50
@@ -55,19 +55,19 @@
               .insight__body
                 %p
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.revenue')
-                  = link_to sales_over_time_report_path(starts_at: Time.current.to_s(:date_only), ends_at: Time.current.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: Time.current.to_fs(:date_only), ends_at: Time.current.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_to_currency @dashboard.today.revenue
                 %p
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.orders')
-                  = link_to sales_over_time_report_path(starts_at: Time.current.to_s(:date_only), ends_at: Time.current.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: Time.current.to_fs(:date_only), ends_at: Time.current.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_with_delimiter @dashboard.today.orders
                 %p
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.units_sold')
-                  = link_to sales_over_time_report_path(starts_at: Time.current.to_s(:date_only), ends_at: Time.current.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: Time.current.to_fs(:date_only), ends_at: Time.current.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_with_delimiter @dashboard.today.units_sold
                 %p
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.customers')
-                  = link_to sales_over_time_report_path(starts_at: Time.current.to_s(:date_only), ends_at: Time.current.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: Time.current.to_fs(:date_only), ends_at: Time.current.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_with_delimiter @dashboard.today.customers
 
         / Insight List
@@ -87,7 +87,7 @@
               - if params[:starts_at].blank? && params[:ends_at].blank?
                 = t('workarea.admin.dashboards.index.past_week')
               - else
-                = t('workarea.admin.date_selector.date_range', starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only))
+                = t('workarea.admin.date_selector.date_range', starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only))
 
           .browsing-controls.browsing-controls--center.browsing-controls--filters-displayed
             = form_tag request.path, method: 'get' do
@@ -98,7 +98,7 @@
               .grid__cell.grid__cell--50
                 .align-center
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.orders')
-                  = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_with_delimiter @dashboard.orders
 
                   - if @dashboard.orders_percent_change.present?
@@ -109,7 +109,7 @@
               .grid__cell.grid__cell--50
                 .align-center
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.revenue')
-                  = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_to_currency @dashboard.revenue
 
                   - if @dashboard.revenue_percent_change.present?
@@ -129,7 +129,7 @@
               .grid__cell.grid__cell--50
                 .align-center
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.customers')
-                  = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_with_delimiter @dashboard.customers
 
                   - if @dashboard.customers_percent_change.present?
@@ -140,7 +140,7 @@
               .grid__cell.grid__cell--50
                 .align-center
                   %span.heading.heading--6.heading--no-margin= t('workarea.admin.dashboards.index.units_sold')
-                  = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+                  = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                     = number_with_delimiter @dashboard.units_sold
 
                   - if @dashboard.units_sold_percent_change.present?
