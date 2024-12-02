@@ -1,6 +1,6 @@
 .insight
   .insight__date
-    %span.insight__period= insight.reporting_on.end_of_week.to_date.to_s(:long)
+    %span.insight__period= insight.reporting_on.end_of_week.to_date.to_fs(:long)
   .insight__heading= t('workarea.admin.insights.most_discounted_products.title')
   .insight__body
     %p.insight__note= t('workarea.admin.insights.most_discounted_products.info')

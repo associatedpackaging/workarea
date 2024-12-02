@@ -23,7 +23,7 @@
             - if model.backordered_until.present?
               %li
                 %strong= t('workarea.admin.fields.backordered_until')
-                = model.backordered_until.to_s(:date_only)
+                = model.backordered_until.to_fs(:date_only)
             %li
               %strong= t('workarea.admin.fields.purchased')
               = model.purchased
