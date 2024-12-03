@@ -23,15 +23,15 @@ module Workarea
         two = create_product(id: '2', created_at: Time.new(2016, 8, 25))
 
         search = AdminSearch.new(
-          created_at_greater_than: Time.new(2016, 8, 24).beginning_of_day.to_s(:iso8601),
-          created_at_less_than: Time.new(2016, 8, 25).end_of_day.to_s(:iso8601)
+          created_at_greater_than: Time.new(2016, 8, 24).beginning_of_day.to_fs(:iso8601),
+          created_at_less_than: Time.new(2016, 8, 25).end_of_day.to_fs(:iso8601)
         )
 
         assert_equal([two, one], search.results)
 
         search = AdminSearch.new(
-          created_at_greater_than: Time.new(2016, 8, 25).beginning_of_day.to_s(:iso8601),
-          created_at_less_than: Time.new(2016, 8, 25).end_of_day.to_s(:iso8601)
+          created_at_greater_than: Time.new(2016, 8, 25).beginning_of_day.to_fs(:iso8601),
+          created_at_less_than: Time.new(2016, 8, 25).end_of_day.to_fs(:iso8601)
         )
 
         assert_equal([two], search.results)

@@ -30,7 +30,7 @@ module Workarea
 
         view_model = ProductViewModel.new(cached_product)
         assert_match(/#{@product.id}/, view_model.cache_key)
-        assert_match(/#{@product.updated_at.utc.to_s(:nsec)}/, view_model.cache_key)
+        assert_match(/#{@product.updated_at.utc.to_fs(:nsec)}/, view_model.cache_key)
 
         view_model = ProductViewModel.new(cached_product, via: '1/2/3')
         assert_match(/1\/2\/3/, view_model.cache_key)
