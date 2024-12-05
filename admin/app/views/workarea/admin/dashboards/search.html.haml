@@ -20,7 +20,7 @@
         .insight
           .insight__body
             %h6.heading.heading--no-margin= t('workarea.admin.dashboards.search.searches')
-            = link_to searches_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only)), class: 'heading heading--1 heading--no-margin' do
+            = link_to searches_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only)), class: 'heading heading--1 heading--no-margin' do
               = number_with_delimiter @dashboard.searches
 
             - if @dashboard.searches_percent_change.present?
@@ -33,7 +33,7 @@
         .insight
           .insight__body
             %h6.heading.heading--no-margin= t('workarea.admin.dashboards.search.searches_without_results')
-            = link_to searches_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only), results_filter: 'without_results'), class: 'heading heading--1 heading--no-margin' do
+            = link_to searches_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only), results_filter: 'without_results'), class: 'heading heading--1 heading--no-margin' do
               = number_with_delimiter @dashboard.searches_without_results
 
             - if @dashboard.searches_without_results_percent_change.present?

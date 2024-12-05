@@ -1,6 +1,6 @@
 .insight
   .insight__date
-    %span.insight__period= insight.reporting_on.to_date.to_s(:date_only)
+    %span.insight__period= insight.reporting_on.to_date.to_fs(:date_only)
   .insight__heading= t('workarea.admin.insights.new_products.title')
   .insight__body
     %p.insight__note= t('workarea.admin.insights.new_products.info')

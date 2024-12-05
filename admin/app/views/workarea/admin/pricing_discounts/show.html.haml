@@ -15,7 +15,7 @@
   .view__container
     - if @discount.auto_deactivated?
       = render_message 'warning' do
-        = t('workarea.admin.pricing_discounts.show.deactivated_html', time: @discount.auto_deactivated_at.to_date.to_s(:long), timespan: distance_of_time_in_words(Workarea.config.discount_staleness_ttl))
+        = t('workarea.admin.pricing_discounts.show.deactivated_html', time: @discount.auto_deactivated_at.to_date.to_fs(:long), timespan: distance_of_time_in_words(Workarea.config.discount_staleness_ttl))
 
       .section
         .grid.grid--auto.grid--center

@@ -25,7 +25,7 @@
           .dashboard-graphs__box
             .dashboard-graphs__info
               %h6.heading.heading--no-margin= t('workarea.admin.dashboards.marketing.discounts')
-              = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
+              = link_to sales_over_time_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only), group_by: 'day'), class: 'heading heading--1 heading--no-margin' do
                 = number_to_currency @dashboard.discounts
 
               - if @dashboard.discounts_percent_change.present?
@@ -39,7 +39,7 @@
           .dashboard-graphs__box
             .dashboard-graphs__info
               %h6.heading.heading--no-margin= t('workarea.admin.dashboards.marketing.referrers_by_revenue')
-              = link_to sales_by_traffic_referrer_report_path(starts_at: @dashboard.starts_at.to_s(:date_only), ends_at: @dashboard.ends_at.to_s(:date_only)), class: 'heading heading--1 heading--no-margin' do
+              = link_to sales_by_traffic_referrer_report_path(starts_at: @dashboard.starts_at.to_fs(:date_only), ends_at: @dashboard.ends_at.to_fs(:date_only)), class: 'heading heading--1 heading--no-margin' do
                 = t('workarea.admin.dashboards.marketing.days', count: ((@dashboard.ends_at - @dashboard.starts_at) / 1.day).ceil)
 
             .dashboard-graphs__chart= column_chart @dashboard.traffic_referrer_graph_data, **Workarea.config.default_chartkick_options.merge(prefix: Money.default_currency.symbol)
