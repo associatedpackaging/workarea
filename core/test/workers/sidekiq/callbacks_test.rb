@@ -93,7 +93,7 @@ module Sidekiq
       include Sidekiq::Worker
       include Sidekiq::CallbacksWorker
       sidekiq_options enqueue_on: {
-        Model => :save, with: -> { [id, changes] }
+        Model => :save, with: -> { [id.to_s, JSON.generate(changes)] }
       }
 
       def perform(*)
@@ -245,7 +245,7 @@ module Sidekiq
 
       args = CustomArgsWorker.jobs.last['args']
       assert_equal(args.first, model.id.to_s)
-      assert_equal(args.second, { 'name' => ['foo', 'bar'] })
+      assert_equal(JSON.parse(args.second), { 'name' => ['foo', 'bar'] })
     end
 
     def test_enabling_and_disabling
