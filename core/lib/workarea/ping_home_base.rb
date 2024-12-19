@@ -6,6 +6,8 @@ module Workarea
     class << self
       def ping
         begin
+          return "No longer need to ping https://homebase.weblinc.com"
+
           request = Net::HTTP::Post.new('/ping')
           request['X-WeblincClientName'] = Workarea.config.site_name
           request['X-WeblincAuthToken'] = auth_token
