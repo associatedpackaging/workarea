@@ -45,9 +45,6 @@ module Workarea
       end
 
       config.after_initialize do |app|
-        # Do this after initialization so app initializers have a chance to run
-        PingHomeBase.ping unless Rails.env.development? || Rails.env.test?
-
         if Rails.env.test?
           # System tests can timeout without this, due to slow template resolution
           # if you have many plugins installed.
