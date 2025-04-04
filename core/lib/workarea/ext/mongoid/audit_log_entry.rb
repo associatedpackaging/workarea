@@ -17,8 +17,13 @@ module Mongoid
       end
 
       def model_name
-        model_attributes['name'][I18n.locale.to_s].presence ||
-          model_attributes['name']
+        if model_attributes['name'].present?
+          model_name = model_attributes['name'][I18n.locale.to_s].presence || model_attributes['name']
+        else
+          model_name = model_attributes['name']
+        end
+        puts "MODEL NAME =================================== "
+        puts "#{model_name}\r\n\r\n"
       end
 
       def release
