@@ -2,7 +2,7 @@ module Workarea
   module VERSION
     MAJOR = 3
     MINOR = 9
-    PATCH = 3
+    PATCH = 4
     STRING = [MAJOR, MINOR, PATCH].compact.join('.')
 
     module MONGODB
