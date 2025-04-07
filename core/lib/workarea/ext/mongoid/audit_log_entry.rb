@@ -17,7 +17,7 @@ module Mongoid
       end
 
       def model_name
-        if model_attributes['name'].present?
+        if model_attributes.present? && model_attributes['name'].present?
           model_attributes['name'][I18n.locale.to_s].presence || model_attributes['name']
         else
           'Not Found'
