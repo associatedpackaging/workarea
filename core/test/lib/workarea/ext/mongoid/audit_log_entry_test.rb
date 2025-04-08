@@ -63,6 +63,29 @@ module Mongoid
           refute(child_entry.restorable?)
         end
       end
+
+      def test_model_name
+        product = create_product(name: 'Foo')
+
+        entry = Entry.create!(
+          audited_id: product.id,
+          audited_type: product.class,
+          tracked_changes: { 'foo' => 'bar' }
+        )
+
+        assert_equal(entry.model_name, 'Not Found')
+
+        entry.model_attributes = {}
+        entry.model_attributes['active'] = true
+        entry.save!
+
+        assert_equal(entry.model_name, 'Not Found')
+
+        entry.model_attributes['name'] = 'Test Company'
+        entry.save!
+
+        assert_equal(entry.model_name, 'Test Company')
+      end
     end
   end
 end
