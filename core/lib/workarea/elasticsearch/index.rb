@@ -111,6 +111,7 @@ module Workarea
                   { index: name, q: query.to_s }
                 end
 
+        puts "\r\n\r\nWorkarea::Elasticsearch::Index: \r\n\r\nquery: #{query.inspect}\r\n\r\noptions: #{options.inspect}\r\n\r\n"
         Workarea.elasticsearch.search(query.merge(options))
       end
 
