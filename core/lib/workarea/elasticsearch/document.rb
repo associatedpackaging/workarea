@@ -72,6 +72,8 @@ module Workarea
         end
 
         def search(query, options = {})
+          puts "\r\n\r\nWorkarea::Elasticsearch::Document - \r\nCurrent Index #{current_index.inspect}"
+          puts "Query #{query.inspect}\r\nOptions: #{options.inspect}\r\n\r\n"
           current_index.search(query, options.merge(type: type))
         end
 
