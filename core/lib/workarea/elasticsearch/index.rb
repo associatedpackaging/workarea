@@ -112,7 +112,10 @@ module Workarea
                 end
 
         puts "\r\n\r\nWorkarea::Elasticsearch::Index: \r\n\r\nquery: #{query.inspect}\r\n\r\noptions: #{options.inspect}\r\n\r\n"
-        Workarea.elasticsearch.search(query.merge(options))
+        puts "query.merge(options): #{query.merge(options).inspect}\r\n\r\n"
+        result = Workarea.elasticsearch.search(query.merge(options))
+        puts "result: #{result.inspect}\r\n\r\n"
+        result
       end
 
       def count(query = nil, options = {})
