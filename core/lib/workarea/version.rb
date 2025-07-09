@@ -18,8 +18,8 @@ module Workarea
     end
 
     module ELASTICSEARCH
-      MAJOR = 5
-      MINOR = 6
+      MAJOR = 6
+      MINOR = 8
       STRING = [MAJOR, MINOR].compact.join('.')
     end
   end
