@@ -76,6 +76,8 @@ module Workarea
       def bulk(documents, options = {})
         return if documents.blank?
 
+        puts "\r\n\r\ndocuments: #{documents.inspect}"
+
         params = {
           index: name,
           refresh: Workarea.config.auto_refresh_search,
