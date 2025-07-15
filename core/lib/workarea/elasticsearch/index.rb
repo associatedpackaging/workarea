@@ -90,6 +90,8 @@ module Workarea
                 end
         }
 
+        puts "\r\n\r\nparams: #{params.merge(options).inspect}"
+
         Workarea.elasticsearch.bulk(params.merge(options))
       end
 
