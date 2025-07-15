@@ -49,11 +49,19 @@ module Workarea
 
         def bulk(documents = [], options = {})
           options = options.merge(type: type)
+          puts "\r\n\r\nType :#{type.inspect}"
+          puts "\r\n\r\nDocuments :#{documents.inspect}"
+          puts "\r\n\r\nOptions :#{options.inspect}"
 
           if block_given?
             I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
           else
-            current_index.bulk(documents, options)
+            begin
+              current_index.bulk(documents, options)
+            rescue => e
+              puts "Current Index: #{current_index.inspect}"
+              puts "Bulk Method Error: #{e.inspect}"
+            end
           end
         end
 
