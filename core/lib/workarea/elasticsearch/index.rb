@@ -80,7 +80,7 @@ module Workarea
 
         params = {
           index: name,
-          refresh: Workarea.config.auto_refresh_search,
+          # refresh: Workarea.config.auto_refresh_search,
           body: documents.map do |document|
                   action = document.delete(:bulk_action).try(:to_sym) || :index
 
