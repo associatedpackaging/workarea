@@ -50,6 +50,10 @@ module Workarea
         def bulk(documents = [], options = {})
           options = options.merge(type: type)
 
+          puts "\r\n\r\ntype: #{type.inspect}"
+          puts "\r\n\r\ndocuments: #{documents.inspect}"
+          puts "\r\n\r\noptions: #{options.inspect}"
+
           if block_given?
             I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
           else
