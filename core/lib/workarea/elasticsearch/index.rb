@@ -92,9 +92,14 @@ module Workarea
                 end
         }
 
-        puts "\r\n\r\nparams: #{params.merge(options).inspect}"
+        puts "\r\n\r\nparams: #{params.inspect}"
+        puts "\r\n\r\nparams: #{options.inspect}"
 
-        Workarea.elasticsearch.bulk(params.merge(options))
+        begin
+          Workarea.elasticsearch.bulk(params.merge(options))
+        rescue => e
+          puts "Workarea.elasticsearch.bulk error: #{e.inspect}"
+        end
       end
 
       def delete(id, options = {})
