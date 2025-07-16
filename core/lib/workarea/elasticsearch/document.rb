@@ -54,7 +54,12 @@ module Workarea
           puts "\r\n\r\nOptions: #{options.inspect}"
 
           if block_given?
-            I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
+            begin
+              puts "\r\n\r\nBlock Given Current Index: #{current_index.inspect}"
+              I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
+            rescue => e
+              puts "Block Given #{curren_index.inspect} bulk Method Error: #{e.inspect}"
+            end
           else
             begin
               puts "\r\n\r\nCurrent Index: #{current_index.inspect}"
