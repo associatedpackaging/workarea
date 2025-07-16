@@ -76,7 +76,7 @@ module Workarea
       def bulk(documents, options = {})
         return if documents.blank?
 
-        puts "\r\n\r\ndocuments: #{documents.inspect}"
+        # puts "\r\n\r\ndocuments: #{documents.inspect}"
 
         params = {
           index: name,
@@ -93,10 +93,11 @@ module Workarea
         }
 
         puts "\r\n\r\nparams: #{params.inspect}"
-        puts "\r\n\r\nparams: #{options.inspect}"
+        puts "\r\n\r\noptions: #{options.inspect}"
 
         begin
-          Workarea.elasticsearch.bulk(params.merge(options))
+          # Workarea.elasticsearch.bulk(params.merge(options))
+          Workarea.elasticsearch.bulk(params)
         rescue => e
           puts "Workarea.elasticsearch.bulk error: #{e.inspect}"
         end
