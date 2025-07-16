@@ -58,14 +58,14 @@ module Workarea
               puts "\r\n\r\nBlock Given Current Index: #{current_index.inspect}"
               I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
             rescue => e
-              puts "Block Given #{curren_index.inspect} bulk Method Error: #{e.inspect}"
+              puts "Block Given bulk Method Error: #{e.inspect}"
             end
           else
             begin
               puts "\r\n\r\nCurrent Index: #{current_index.inspect}"
               current_index.bulk(documents, options)
             rescue => e
-              puts "#{curren_index.inspect} bulk Method Error: #{e.inspect}"
+              puts "#{current_index.inspect} bulk Method Error: #{e.inspect}"
             end
           end
         end
