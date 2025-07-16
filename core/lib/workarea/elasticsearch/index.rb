@@ -80,7 +80,7 @@ module Workarea
 
         params = {
           index: name,
-          # refresh: Workarea.config.auto_refresh_search,
+          refresh: Workarea.config.auto_refresh_search,
           body: documents.map do |document|
                   action = document.delete(:bulk_action).try(:to_sym) || :index
 
@@ -92,7 +92,9 @@ module Workarea
                 end
         }
 
-        puts "\r\n\r\nparams: #{params.inspect}"
+        puts "\r\n\r\nparams[:index]: #{params[:index].inspect}"
+        puts "\r\n\r\nparams[:refresh]: #{params[:refresh].inspect}"
+        puts "\r\n\r\nparams[:body]: #{params[:body].inspect}"
         puts "\r\n\r\noptions: #{options.inspect}"
 
         begin
