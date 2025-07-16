@@ -56,7 +56,8 @@ module Workarea
           if block_given?
             begin
               puts "\r\n\r\nBlock Given Current Index: #{current_index.inspect}"
-              I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
+              # I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
+              I18n.for_each_locale { current_index.bulk(Array.wrap(yield)) }
             rescue => e
               puts "Block Given bulk Method Error: #{e.inspect}"
             end
