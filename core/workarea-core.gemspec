@@ -57,7 +57,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'local_time', '~> 2.1.0'
   s.add_dependency 'lodash-rails', '~> 4.17.4'
   s.add_dependency 'jquery-rails', '~> 4.6.0'
-  s.add_dependency 'jquery-ui-rails', '~> 6.0.1'
+  s.add_dependency 'jquery-ui-rails', '~> 8.0.0'
   s.add_dependency 'tooltipster-rails', '~> 4.2.0'
   s.add_dependency 'select2-rails', '~> 4.0.3'
   s.add_dependency 'wysihtml-rails', '~> 0.6.0.beta2'
