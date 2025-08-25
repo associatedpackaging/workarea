@@ -1,7 +1,7 @@
 module Workarea
   module VERSION
     MAJOR = 3
-    MINOR = 12
+    MINOR = 13
     PATCH = 0
     STRING = [MAJOR, MINOR, PATCH].compact.join('.')
 
