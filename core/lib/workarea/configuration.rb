@@ -457,7 +457,8 @@ module Workarea
             jump_to_param: { type: 'keyword' },
             updated_at: { type: 'date' },
             releasable: { type: 'boolean' },
-            placed_at: { type: 'date' }
+            placed_at: { type: 'date' },
+            "facets.type": { "type": "text", "fielddata": true }
           }
         }
       }
