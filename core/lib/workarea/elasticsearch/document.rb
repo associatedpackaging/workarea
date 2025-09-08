@@ -62,7 +62,10 @@ module Workarea
 
           if block_given?
             begin
-              I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
+              array_wrap = Array.wrap(yield)
+              puts "\r\n\r\Array Wrap: #{array_wrap.inspect}"
+              I18n.for_each_locale { current_index.bulk(array_wrap, options) }
+              # I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
               # I18n.for_each_locale { current_index.bulk(Array.wrap(yield)) }
             rescue => e
               puts "#{current_index.inspect} Block Given bulk Method Error: #{e.inspect}"
