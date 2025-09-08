@@ -52,18 +52,23 @@ module Workarea
           puts "\r\n\r\nType: #{type.inspect}"
           puts "\r\n\r\nDocuments: #{documents.inspect}"
           puts "\r\n\r\nOptions: #{options.inspect}"
+          puts "\r\n\r\nCurrent Index: #{current_index.inspect}"
+
+          # if block_given?
+          #   I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
+          # else
+          #   current_index.bulk(documents, options)
+          # end
 
           if block_given?
             begin
-              puts "\r\n\r\nBlock Given Current Index: #{current_index.inspect}"
-              # I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
-              I18n.for_each_locale { current_index.bulk(Array.wrap(yield)) }
+              I18n.for_each_locale { current_index.bulk(Array.wrap(yield), options) }
+              # I18n.for_each_locale { current_index.bulk(Array.wrap(yield)) }
             rescue => e
-              puts "Block Given bulk Method Error: #{e.inspect}"
+              puts "#{current_index.inspect} Block Given bulk Method Error: #{e.inspect}"
             end
           else
             begin
-              puts "\r\n\r\nCurrent Index: #{current_index.inspect}"
               current_index.bulk(documents, options)
             rescue => e
               puts "#{current_index.inspect} bulk Method Error: #{e.inspect}"
