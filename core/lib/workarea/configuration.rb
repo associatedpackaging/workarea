@@ -439,7 +439,7 @@ module Workarea
             {
               facet_values: {
                 path_match: 'facets.*',
-                mapping: {  type: 'keyword', analyzer: 'keyword' }
+                mapping: {  fielddata: true, type: 'keyword', analyzer: 'keyword' }
               }
             }
           ],
@@ -457,8 +457,7 @@ module Workarea
             jump_to_param: { type: 'keyword' },
             updated_at: { type: 'date' },
             releasable: { type: 'boolean' },
-            placed_at: { type: 'date' },
-            "facets.type": { type: 'keyword' }
+            placed_at: { type: 'date' }
           }
         }
       }
