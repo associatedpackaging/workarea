@@ -458,7 +458,7 @@ module Workarea
             updated_at: { type: 'date' },
             releasable: { type: 'boolean' },
             placed_at: { type: 'date' },
-            "facets.type": { type: "text", fields: { keyword: { type: "keyword", ignore_above: 256 } } }
+            "facets.type": { type: "text", fielddata: true }
           }
         }
       }
