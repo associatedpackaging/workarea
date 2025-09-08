@@ -439,7 +439,7 @@ module Workarea
             {
               facet_values: {
                 path_match: 'facets.*',
-                mapping: {  fielddata: true, type: 'keyword', analyzer: 'keyword' }
+                mapping: {  type: 'keyword', analyzer: 'keyword' }
               }
             }
           ],
