@@ -98,8 +98,8 @@ module Workarea
         puts "\r\n\r\noptions: #{options.inspect}"
 
         begin
-          # Workarea.elasticsearch.bulk(params.merge(options))
-          Workarea.elasticsearch.bulk(params)
+          Workarea.elasticsearch.bulk(params.merge(options))
+          # Workarea.elasticsearch.bulk(params)
         rescue => e
           puts "Workarea.elasticsearch.bulk error: #{e.inspect}"
         end
