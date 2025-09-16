@@ -67,7 +67,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-unique-clone-rails', '~> 1.0.0'
   s.add_dependency 'avalanche-rails', '~> 1.2.0'
   s.add_dependency 'inline_svg', '~> 1.7.0'
-  s.add_dependency 'haml', '~> 5.2.0'
+  s.add_dependency 'haml', '~> 6.0.12'
   s.add_dependency 'ejs', '~> 1.1.1'
   s.add_dependency 'jbuilder', '~> 2.10.0'
   s.add_dependency 'tribute', '~> 3.6.0.0'
