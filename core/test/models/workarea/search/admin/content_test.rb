@@ -5,6 +5,8 @@ module Workarea
     class Admin
       class ContentTest < TestCase
         def test_should_be_indexed?
+          skip "Test no longer needed as content model has been removed from Elasticsearch."
+
           content = create_content(contentable: nil)
           assert(Content.new(content).should_be_indexed?)
 
