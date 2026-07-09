@@ -1,8 +1,6 @@
 module Workarea
   module Search
     class Admin
-      include Elasticsearch::Document
-
       def self.jump_to(params, size = Workarea.config.default_admin_jump_to_result_count)
         query = {
           aggs: {

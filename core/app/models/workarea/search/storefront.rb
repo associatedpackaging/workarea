@@ -1,8 +1,6 @@
 module Workarea
   module Search
     class Storefront
-      include Elasticsearch::Document
-
       def self.ensure_dynamic_mappings
         # This ensures a bare-bones product mapping in Elasticsearch, which is
         # required for some functionality (e.g. categories in percolator).

@@ -1,8 +1,6 @@
 module Workarea
   module Search
     class Help
-      include Elasticsearch::Document
-
       def as_document
         {
           id: model.id,

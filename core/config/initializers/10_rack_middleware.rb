@@ -3,7 +3,6 @@ require "#{Workarea::Core::Engine.root}/app/middleware/workarea/application_midd
 
 app = Rails.application
 app.config.middleware.use(Mongoid::QueryCache::Middleware)
-app.config.middleware.use(Workarea::Elasticsearch::QueryCache::Middleware)
 
 if !app.config.action_dispatch.rack_cache
   app.config.middleware.use Dragonfly::Middleware, :workarea
