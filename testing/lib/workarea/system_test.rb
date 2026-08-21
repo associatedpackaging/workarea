@@ -79,7 +79,10 @@ module Workarea
     driven_by :selenium, using: :headless_chrome, screen_size: [1400, 1400]  do |option|
       option.add_argument('--disable-gpu')
       option.add_argument('--disable-popup-blocking')
+      option.add_argument('--disable-search-engine-choice-screen')
+      option.add_argument('--disable-infobars')
       option.add_argument('--enable-features=NetworkService,NetworkServiceInProcess')
+      option.add_preference("autofill.profile_enabled", false)
     end
 
     setup do
