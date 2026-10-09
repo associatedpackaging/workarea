@@ -55,6 +55,8 @@ module Workarea
   # @return [Elasticsearch::Client]
   #
   def self.elasticsearch
+    # TODO: SearchKick
+    return
     @elasticsearch ||= ::Elasticsearch::Client.new(
       Configuration::Elasticsearch.find
     )

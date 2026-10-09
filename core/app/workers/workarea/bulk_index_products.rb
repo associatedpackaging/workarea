@@ -12,6 +12,8 @@ module Workarea
       end
 
       def perform_by_models(products)
+        # TODO: SearchKick
+        return
         return if products.blank?
         products = Array.wrap(products)
 

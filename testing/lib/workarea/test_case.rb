@@ -75,8 +75,9 @@ module Workarea
         setup do
           Workarea.config.auto_refresh_search = true
           WebMock.disable_net_connect!(allow_localhost: true)
-          Workarea::Elasticsearch::Document.all.each(&:reset_indexes!)
-          Workarea::Search::Storefront.ensure_dynamic_mappings
+          # TODO: SearchKick
+          # Workarea::Elasticsearch::Document.all.each(&:reset_indexes!)
+          # Workarea::Search::Storefront.ensure_dynamic_mappings
         end
       end
     end
