@@ -32,8 +32,9 @@ module Workarea
       def set_locales(...)
         super
 
-        Workarea::Elasticsearch::Document.all.each(&:create_indexes!)
-        Workarea::Search::Storefront.ensure_dynamic_mappings
+        # TODO: SearchKick
+        # Workarea::Elasticsearch::Document.all.each(&:create_indexes!)
+        # Workarea::Search::Storefront.ensure_dynamic_mappings
       end
     end
 

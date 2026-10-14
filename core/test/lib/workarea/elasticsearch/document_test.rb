@@ -8,7 +8,8 @@ module Workarea
       }
 
       class Foo
-        include Elasticsearch::Document
+        # TODO: SearchKick
+        # include Elasticsearch::Document
 
         def id
           model[:id]
